@@ -2,8 +2,10 @@ const { makeExecutableSchema } = require('graphql-tools')
 var { graphqlHTTP } = require('express-graphql')
 const { readFileSync } = require('fs')
 const { join } = require('path')
-const resolvers = require('./lib/resolvers')
 const express = require('express')
+const resolvers = require('./lib/resolvers')
+
+// initialize express
 const app = express()
 const port = process.env.port || 4000
 
@@ -15,8 +17,6 @@ const schema = makeExecutableSchema({
 })
 
 // execute query
-// graphql(schema, '{ welcome }', resolvers).then((data) => console.log(data))
-
 app.use(
   '/graphql',
   graphqlHTTP({
