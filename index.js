@@ -1,4 +1,4 @@
-const { graphql, buildSchema } = require('graphql')
+const { buildSchema } = require('graphql')
 var { graphqlHTTP } = require('express-graphql')
 const express = require('express')
 const app = express()
