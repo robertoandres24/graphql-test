@@ -10,3 +10,12 @@ type Query {
   "return a single Course"
   getCourse(id: ID!): Course
 } 
+
+input CourseInput {
+  title : String!
+  length : String
+}
+
+type Mutation {
+  createCourse(input: CourseInput!) : Course
+}
