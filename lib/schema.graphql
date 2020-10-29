@@ -33,4 +33,6 @@ input StudentInput {
 type Mutation {
   createCourse(input: CourseInput!) : Course
   createStudent(input: StudentInput!) : Student
+  deleteStudent( id:ID) : Student
+  updateStudent( id:ID, input: StudentInput!) : Student
 }
