@@ -4,18 +4,33 @@ type Course {
   length : String
 }
 
+type Student {
+  id : ID!
+  name : String!
+  email : String!
+}
+
 type Query {
   "return all courses"
   getCourses: [Course]
   "return a single Course"
   getCourse(id: ID!): Course
+  "return all students"
+  getStudents: [Student]
+  "return a single Course"
+  getStudent(id: ID!): Student
 } 
 
 input CourseInput {
   title : String!
   length : String
 }
+input StudentInput {
+  name : String!
+  email : String!
+}
 
 type Mutation {
   createCourse(input: CourseInput!) : Course
+  createStudent(input: StudentInput!) : Student
 }
