@@ -2,6 +2,7 @@ type Course {
   id : ID!
   title : String!
   length : String
+  people: [Student]
 }
 
 type Student {
@@ -35,4 +36,5 @@ type Mutation {
   createStudent(input: StudentInput!) : Student
   deleteStudent( id:ID) : Student
   updateStudent( id:ID, input: StudentInput!) : Student
+  addPeople( courseId:ID, personId: ID!) : Course
 }
